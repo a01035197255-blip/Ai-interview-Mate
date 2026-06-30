@@ -1,0 +1,38 @@
+version: 0.2
+
+env:
+  variables:
+    NEXT_PUBLIC_API_URL: "https://interviewmate-api.p-e.kr/"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 24
+  pre_build:
+    commands:
+      - echo "Checking versions..."
+      - node -v && npm -v
+  build:
+    commands:
+      - echo "Build started..."
+      - cd frontend && npm ci && npm run build
+  post_build:
+    commands:
+      - echo "Post-build started..."
+      # 현재 위치가 frontend이므로, 상위로 나가서 deploy-frontend 생성
+      - cd ..
+      - mkdir -p deploy-frontend
+      # frontend 폴더 내의 결과물들을 deploy-frontend로 복사
+      - cp -r frontend/.next deploy-frontend/
+      - cp frontend/package.json deploy-frontend/
+      - cp frontend/package-lock.json deploy-frontend/
+      - cp frontend/Procfile deploy-frontend/
+      - '[ -f frontend/next.config.ts ] && cp frontend/next.config.ts deploy-frontend/ || true'
+      - '[ -d frontend/public ] && cp -r frontend/public deploy-frontend/ || true'
+      - '[ -d frontend/.ebextensions ] && cp -r frontend/.ebextensions deploy-frontend/ || true'
+      - ls -la deploy-frontend/
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: deploy-frontend
+  discard-paths: no

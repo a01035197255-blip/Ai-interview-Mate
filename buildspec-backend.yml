@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+
+  build:
+    commands:
+      - cd backend && chmod +x gradlew && ./gradlew bootJar -x test
+  post_build:
+    commands:
+      - cd ..
+      - mkdir -p deploy-backend
+      - cp backend/build/libs/InterviewMate-app.jar deploy-backend/
+      - cp backend/Procfile deploy-backend/
+      - mkdir -p deploy-backend/.platform/nginx/conf.d
+      - "echo 'proxy_connect_timeout 180s;' > deploy-backend/.platform/nginx/conf.d/custom-timeout.conf"
+      - "echo 'proxy_send_timeout 180s;' >> deploy-backend/.platform/nginx/conf.d/custom-timeout.conf"
+      - "echo 'proxy_read_timeout 180s;' >> deploy-backend/.platform/nginx/conf.d/custom-timeout.conf"
+      - mkdir -p deploy-backend/.ebextensions
+      - "echo 'option_settings:' > deploy-backend/.ebextensions/alb-timeout.config"
+      - "echo '  aws:elbv2:loadbalancer:' >> deploy-backend/.ebextensions/alb-timeout.config"
+      - "echo '    IdleTimeout: 180' >> deploy-backend/.ebextensions/alb-timeout.config"
+      - ls -la deploy-backend/
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: deploy-backend
+  discard-paths: no
