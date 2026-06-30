@@ -102,29 +102,29 @@ AI 답변 평가
 🚀 Tech Stack
 
 Backend
-- Java
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- JWT
-- PostgreSQL
-- Redis (optional)
+Java
+Spring Boot
+Spring Security
+Spring Data JPA
+JWT
+PostgreSQL
+Redis (optional)
 
 Frontend
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Axios
+Next.js
+TypeScript
+Tailwind CSS
+Axios
 
 AI
-- OpenAI API
-- Prompt Engineering
+OpenAI API
+Prompt Engineering
 
 Infra
-- Docker
-- AWS (EC2, S3)
-- GitHub Actions (CI/CD)
-- Nginx
+Docker
+AWS (EC2, S3)
+GitHub Actions (CI/CD)
+Nginx
 
 ---
 
