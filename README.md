@@ -8,7 +8,12 @@ AI 면접 · 지원서 관리 · 개인화 피드백 제공 서비스
 ## 🌐 Deployment
 https://interviewmate.n-e.kr/
 
+## 📄 Project Documents
+
+- 📑 [AI Interview System Development Project (PPT)](docs/AI%20면접%20시스템%20개발%20프로젝트.pptx)
+
 ---
+
 
 ## 📌 Project Overview
 
