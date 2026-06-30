@@ -98,17 +98,30 @@ AI 답변 평가 (논리성 · 키워드 · 직무 적합도)
 
 ## 🚀 Tech Stack
 
-### Backend
-Java · Spring Boot · Spring Security · Spring Data JPA · JWT · PostgreSQL · Redis (optional)
+**Backend**  
+Java 
+· Spring Boot 
+· Spring Security 
+· Spring Data JPA 
+· JWT 
+· PostgreSQL 
+· Redis (optional)
 
-### Frontend
-Next.js · TypeScript · Tailwind CSS · Axios
+**Frontend**  
+Next.js
+· TypeScript
+· Tailwind CSS
+· Axios
 
-### AI
-OpenAI API · Prompt Engineering
+**AI**  
+OpenAI API 
+· Prompt Engineering
 
-### Infra
-Docker · AWS (EC2, S3) · GitHub Actions (CI/CD) · Nginx
+**Infra**  
+Docker 
+· AWS (EC2, S3) 
+· GitHub Actions (CI/CD) 
+· Nginx
 
 ---
 
