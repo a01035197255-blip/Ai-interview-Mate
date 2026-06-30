@@ -11,13 +11,6 @@ https://interviewmate.n-e.kr/
 
 ---
 
-## 📄 Project Documents
-
-- 📑 **Project Presentation (PPT)**  
-  👉 [다운로드하기](./docs/InterviewMate_Project.pptx)
-
----
-
 ## 📌 Project Overview
 
 InterviewMate는 지원서 관리 기능과 직무 기반 AI 모의면접 기능을 제공하는 취업 준비 지원 서비스입니다.
